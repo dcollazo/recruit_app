@@ -1,0 +1,18 @@
+<h1>Messenger</h1>
+
+<% @users.each do |user| %>
+  <%= link_to user.email %>
+<% end %>
+
+<div ng-controller="MessengerCtrl">
+  <form ng-submit="addUser()">
+    <input type="text" ng-model="newUser.name">
+    <input type="submit" value="Add">
+  </form>
+  
+  <ul>
+    <li ng-repeat="user in users">
+      {{user.name}}
+    </li>
+  </ul>
+</div>

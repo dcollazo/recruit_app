@@ -1,10 +1,8 @@
 RecruitApp::Application.routes.draw do
-  get "users/new"
-  get "users/show"
-  get "users/index"
   devise_for :users
   root to: 'static_pages#home'
   
+  match '/angular', to: 'users#index', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   
